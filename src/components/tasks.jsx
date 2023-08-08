@@ -1,9 +1,18 @@
+import { faker } from '@faker-js/faker'
+
 import Task from './task'
 
-export default function Tasks ({ tasks }) {
+const tarefas = [
+  { description: faker.lorem.word(), isDone: faker.datatype.boolean() },
+  { description: faker.lorem.word(), isDone: faker.datatype.boolean() },
+  { description: faker.lorem.word(), isDone: faker.datatype.boolean() },
+  { description: faker.lorem.word(), isDone: faker.datatype.boolean() },
+]
+
+export default function Tasks () {
   return (
     <ul>
-      {tasks.map((tarefa) => (
+      {tarefas.map((tarefa) => (
         <Task
           key={tarefa}
           task={tarefa}
