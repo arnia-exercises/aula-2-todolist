@@ -1,35 +1,20 @@
 // import Tasks from './components/tasks'
 // import Phrases from './components/phrases'
 // import ChildrenProp from './components/childrenProp'
+import Ex1 from './components/ex1'
 
-
-
-function Lista ({ items = [], children }) {
-  return (
-    <div>
-      <h2>{children}</h2>
-
-      <ul style={{ border: '1px solid red' }}>
-        {items.map((item, index) => (
-          <li key={index}>{index + 1} - {item}</li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-function Folha () {
-  return (
-    <>
-      <Lista items={['Maçã', 'Abacaxi', 'Melancia']}>
-        Lista de Frutas
-      </Lista>
-      <Lista items={['Rock', 'Funk', 'Pop', 'Forró']}>
-        Lista de Estilos de musica
-      </Lista>
-    </>
-  )
-}
+const listaTarefas = [
+  {
+    id: 1,
+    text: 'Fazer o exercício',
+    done: false
+  },
+  {
+    id: 2,
+    text: 'Revisar a aula',
+    done: false
+  },
+]
 
 function App() {
   return (
@@ -37,7 +22,7 @@ function App() {
       {/* <Tasks  /> */}
       {/* <Phrases /> */}
       {/* <ChildrenProp>Olá Mundo!</ChildrenProp> */}
-      <Folha />
+      <Ex1 title="Lista de Tarefas" tasks={listaTarefas} />
     </>
   )
 }
